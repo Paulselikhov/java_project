@@ -52,7 +52,7 @@ class Chit {
             newArr[0] = new Oplata(1);
 
 
-            var str1 = "Датa";
+            var str1 = "Дата";
             var str2 = "Сумма";
             var str3 = "Назначение платежа";
             var str4 = "Плательщик";
@@ -64,7 +64,7 @@ class Chit {
 
                 while (in.hasNext()) {
                     value = in.nextLine();
-                    
+                    System.out.println(value);
                     if(value.equals(str1)){
                         newArr[i].date = value;  
                     } else if (value.equals(str2)){
@@ -78,7 +78,7 @@ class Chit {
                     }
                 }
 
-                System.out.println(newArr[i].agent.setter);
+                System.out.println(newArr[i].date);
                 
                 //for (int j = 0; j<3; j++){  }
 
