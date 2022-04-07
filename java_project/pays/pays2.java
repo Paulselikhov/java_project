@@ -52,11 +52,12 @@ class Chit {
             newArr[0] = new Oplata(1);
 
 
-            var str1 = "Дата";
-            var str2 = "Сумма";
-            var str3 = "Назначение платежа";
-            var str4 = "Плательщик";
-            var str5 = "Получатель";
+            var str1 = "Дата=20.10.2020";
+            var str2 = "Сумма=11000.00";
+            var str3 = "НазначениеПлатежа=Тестовая оплата по счету №12345";
+            var str4 = "Получатель1= ООО 'Получатель 1'";
+            var str5 = "Плательщик1=ООО 'Плательщик 1'";
+            
 
 
             var value = "";
@@ -64,7 +65,6 @@ class Chit {
 
                 while (in.hasNext()) {
                     value = in.nextLine();
-                    System.out.println(value);
                     if(value.equals(str1)){
                         newArr[i].date = value;  
                     } else if (value.equals(str2)){
@@ -78,7 +78,7 @@ class Chit {
                     }
                 }
 
-                System.out.println(newArr[i].date);
+                System.out.println(newArr[i].agent.setter);
                 
                 //for (int j = 0; j<3; j++){  }
 
