@@ -1,15 +1,8 @@
 package pays;
 import java.io.File;
-import java.util.Scanner; // hasNext - класс сканера
+import java.util.Scanner;
 
 
- 
-/* Метод сравнения String equals()
-Сравнение строк с помощью equals позволяет проверять исходное содержимое строки. Метод возвращает true, когда параметр — объект String, представляющий собой ту же строку символов, что и объект: */
-
-class ObjMass {
-    static Oplata[] abc = new Oplata [3];
- }
 
  class contrAgent{
      int id;
@@ -39,14 +32,14 @@ class Chit {
     
     static Oplata[] newArr = new Oplata [3];
     
-    public static final String FILE_PATH = "C://Games//pay3.txt";
+
 
 
 
     public static void main(String[] args) {
         try {
 
-            Scanner in = new Scanner(new File(FILE_PATH));
+            Scanner in = new Scanner(new File("pays/mypay.txt"));
             //StringBuffer data = new StringBuffer();
             
             var value = "";
