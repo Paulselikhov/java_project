@@ -37,9 +37,9 @@ class ObjMass {
     
 class Chit {
     
-    static Oplata[] newArr = new Oplata [2];
+    static Oplata[] newArr = new Oplata [3];
     
-    public static final String FILE_PATH = "C://Games//payment.txt";
+    public static final String FILE_PATH = "C://Games//pay3.txt";
 
 
 
@@ -49,24 +49,29 @@ class Chit {
             Scanner in = new Scanner(new File(FILE_PATH));
             //StringBuffer data = new StringBuffer();
             
-            newArr[0] = new Oplata(1);
-
+            var value = "";
+            var i = 0;
+            
 
             var str1 = "Дата";
             var str2 = "Сумма";
             var str3 = "НазначениеПлатежа";
             var str4 = "Получатель1";
-            var str5 = "Плательщик1";
-            
+            var str5 = "Плательщик1";;
+            var end = "КонецДокумента";
 
-            
-
+            newArr[i] = new Oplata(i);
            
-            var value = "";
-            var i = 0;
+            
 
                 while (in.hasNext()) {
                     value = in.nextLine();
+
+                    if(value.contains(end)){ // если строка = "КонецДокумента"
+                        i = i+1;
+                        newArr[i] = new Oplata(i);
+                    }
+
                     if(value.contains(str1)){ // ищет подстроку в value, которая равна str1
 
                         int index = value.indexOf("=")+1; // ищет следующий индекс по знаку
@@ -92,7 +97,17 @@ class Chit {
                     }
                 }
 
-                System.out.println(newArr[i].date);
+                System.out.println(newArr[0].date);
+                System.out.println(newArr[0].sum);
+                System.out.println(newArr[0].reason);
+                System.out.println(newArr[0].agent.setter);
+                System.out.println(newArr[0].agent.getter);
+                System.out.println("");
+                System.out.println(newArr[1].date);
+                System.out.println(newArr[1].sum);
+                System.out.println(newArr[1].reason);
+                System.out.println(newArr[1].agent.setter);
+                System.out.println(newArr[1].agent.getter);
                 
                 //for (int j = 0; j<3; j++){  }
 
