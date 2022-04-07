@@ -30,47 +30,37 @@ import java.util.Scanner;
     
 class Chit {
     
+    static String value;
     static Oplata[] newArr = new Oplata [3];
     
-
-
-
-
     public static void main(String[] args) {
         try {
 
-            Scanner in = new Scanner(new File("pays/mypay.txt"));
-            //StringBuffer data = new StringBuffer();
+            Scanner myfile = new Scanner(new File("pays/mypay.txt"));
             
-            var value = "";
-            var i = 0;
-            
-
+            var i = 0; // Указывает на индекс элемента в массиве newArr
             var str1 = "Дата";
             var str2 = "Сумма";
             var str3 = "НазначениеПлатежа";
             var str4 = "Получатель1";
-            var str5 = "Плательщик1";;
+            var str5 = "Плательщик1";
             var end = "КонецДокумента";
 
-            newArr[i] = new Oplata(i);
+            newArr[i] = new Oplata(i); // Присваем первому элементу массива с индексом = 0,  объект с id = 0
            
             
+                while (myfile.hasNext()) { // hasNext() - пробегается по каждой строке файла, пока строки существуют
+                    value = myfile.nextLine(); // Присваем value значение первой строки из документа
 
-                while (in.hasNext()) {
-                    value = in.nextLine();
-
-                    if(value.contains(end)){ // если строка = "КонецДокумента"
-                        i = i+1;
-                        newArr[i] = new Oplata(i);
+                    if(value.contains(end)){ // Если строка = "КонецДокумента"
+                        i = i+1;    // Увеличиваем индекс массива на 1 и начинаем записывать данные в следующий объект
+                        newArr[i] = new Oplata(i); //  Элементу массива с индексом = 1 присваивается новый объект с id = 1
                     }
 
                     if(value.contains(str1)){ // ищет подстроку в value, которая равна str1
-
                         int index = value.indexOf("=")+1; // ищет следующий индекс по знаку
                         String finish = value.substring(index); // возвращает всё что после индекса знака "="
                         newArr[i].date = finish;  
-
                     } else if (value.contains(str2)){
                         int index = value.indexOf("=")+1;
                         String finish = value.substring(index);
@@ -101,11 +91,6 @@ class Chit {
                 System.out.println(newArr[1].reason);
                 System.out.println(newArr[1].agent.setter);
                 System.out.println(newArr[1].agent.getter);
-                
-                //for (int j = 0; j<3; j++){  }
-
-
-                 //data.append(in.nextLine()).append("\n");  // nextLine обращается к источнику данных, находит там следующую строку, которую он еще не считывал (в нашем случае — первую) и возвращает ее. А потом ещё добавляет перенос строки.
                 
         } catch ( Exception ex ) {
             ex.printStackTrace();
