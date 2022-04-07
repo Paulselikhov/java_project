@@ -52,33 +52,35 @@ class Chit {
             newArr[0] = new Oplata(1);
 
 
-            var str1 = "Дата=20.10.2020";
-            var str2 = "Сумма=11000.00";
-            var str3 = "НазначениеПлатежа=Тестовая оплата по счету №12345";
-            var str4 = "Получатель1= ООО 'Получатель 1'";
-            var str5 = "Плательщик1=ООО 'Плательщик 1'";
+            var str1 = "Дата";
+            var str2 = "Сумма";
+            var str3 = "НазначениеПлатежа";
+            var str4 = "Получатель1";
+            var str5 = "Плательщик1";
             
 
 
+
+           
             var value = "";
             var i = 0;
 
                 while (in.hasNext()) {
                     value = in.nextLine();
-                    if(value.equals(str1)){
+                    if(value.contains(str1)){
                         newArr[i].date = value;  
-                    } else if (value.equals(str2)){
+                    } else if (value.contains(str2)){
                         newArr[i].sum = value;
-                    } else if (value.equals(str3)){
+                    } else if (value.contains(str3)){
                         newArr[i].reason = value;
-                    } else if (value.equals(str4)){
+                    } else if (value.contains(str4)){
                         newArr[i].agent.setter = value;
-                    } else if (value.equals(str5)){
+                    } else if (value.contains(str5)){
                         newArr[i].agent.getter = value;
                     }
                 }
 
-                System.out.println(newArr[i].date);
+                System.out.println(newArr[i].agent.getter);
                 
                 //for (int j = 0; j<3; j++){  }
 
