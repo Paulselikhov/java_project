@@ -39,7 +39,7 @@ class Chit {
     
     static Oplata[] newArr = new Oplata [2];
     
-    public static final String FILE_PATH = "C://pay3.txt";
+    public static final String FILE_PATH = "C://Games//payment.txt";
 
 
 
@@ -78,7 +78,7 @@ class Chit {
                     }
                 }
 
-                System.out.println(newArr[i].agent.setter);
+                System.out.println(newArr[i].date);
                 
                 //for (int j = 0; j<3; j++){  }
 
