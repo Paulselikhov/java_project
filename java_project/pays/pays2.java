@@ -59,7 +59,7 @@ class Chit {
             var str5 = "Плательщик1";
             
 
-
+            
 
            
             var value = "";
@@ -67,20 +67,32 @@ class Chit {
 
                 while (in.hasNext()) {
                     value = in.nextLine();
-                    if(value.contains(str1)){
-                        newArr[i].date = value;  
+                    if(value.contains(str1)){ // ищет подстроку в value, которая равна str1
+
+                        int index = value.indexOf("=")+1; // ищет следующий индекс по знаку
+                        String finish = value.substring(index); // возвращает всё что после индекса знака "="
+                        newArr[i].date = finish;  
+
                     } else if (value.contains(str2)){
-                        newArr[i].sum = value;
+                        int index = value.indexOf("=")+1;
+                        String finish = value.substring(index);
+                        newArr[i].sum = finish;
                     } else if (value.contains(str3)){
-                        newArr[i].reason = value;
+                        int index = value.indexOf("=")+1;
+                        String finish = value.substring(index);
+                        newArr[i].reason = finish;
                     } else if (value.contains(str4)){
-                        newArr[i].agent.setter = value;
+                        int index = value.indexOf("=")+1;
+                        String finish = value.substring(index);
+                        newArr[i].agent.setter = finish;
                     } else if (value.contains(str5)){
-                        newArr[i].agent.getter = value;
+                        int index = value.indexOf("=")+1;
+                        String finish = value.substring(index);
+                        newArr[i].agent.getter = finish;
                     }
                 }
 
-                System.out.println(newArr[i].agent.getter);
+                System.out.println(newArr[i].date);
                 
                 //for (int j = 0; j<3; j++){  }
 
