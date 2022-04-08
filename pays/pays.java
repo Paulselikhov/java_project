@@ -25,22 +25,21 @@ import java.util.Scanner;
     }
  }
 
+
 class Chit {
 
     static String value;
-    static Oplata[] newArr = new Oplata [3];
+    static Oplata[] newArr = new Oplata[3]; // Указываем, что наш массив будет являться массивом объектов с классом Oplata, с длинной = 3
     static Oplata[] arrSorted = sort();
 
-    public static void main (String[] args)
-{
-   System.out.print(arrSorted);
-}
+    public static void main (String[] args){
+        System.out.println(arrSorted); // Смотрим результат
+    }
     
     public static Oplata[] sort() {
         try {
 
             Scanner myfile = new Scanner(new File("pays/mypay.txt"));
-            
             int i = 0; // Указывает на индекс элемента в массиве newArr
             var str1 = "Дата";
             var str2 = "Сумма";
@@ -58,6 +57,7 @@ class Chit {
                     if(value.contains(endFile)){ 
                         System.out.println("Обработка завершена");
                         System.out.println("");
+  
                     } else {
                         
                         if(value.contains(endDocument)){ // Если строка = "КонецДокумента"
